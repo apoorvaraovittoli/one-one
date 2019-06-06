@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @user.age %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
+
+
+<% if @user.birthday.present? %>
+	<%= link_to 'edit date of birth', edit_user_birthday_path(@user,@user.birthday) %>
+<% else %>
+	<%= link_to 'New date of birth', new_user_birthday_path(@user) %>
+<% end %>
+
+
+
+
